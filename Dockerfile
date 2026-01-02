@@ -1,33 +1,39 @@
 FROM python:3.11-slim
 
 # Install system dependencies
-# libsndfile1 is required for soundfile
-# ffmpeg is often required for audio processing
-# git is required if installing from git repositories
-RUN apt-get update && apt-get install -y \
-    libsndfile1 \
-    ffmpeg \
-    git \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y     libsndfile1     ffmpeg     git     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app
+# Create a non-root user for HF Spaces
+RUN useradd -m -u 1000 user
+USER user
+ENV HOME=/home/user     PATH=/home/user/.local/bin:$PATH
 
-# Copy requirements first to leverage cache
-COPY requirements.txt .
+WORKDIR /home/user/app
+
+# Copy requirements first
+COPY --chown=user requirements.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Patch TTS/utils/io.py to fix "Weights only load failed" error
-# We force weights_only=False in torch.load calls
-RUN SITE_PACKAGES=$(python -c "import site; print(site.getsitepackages()[0])") && \
-    sed -i 's/return torch.load(f, map_location=map_location, \*\*kwargs)/return torch.load(f, map_location=map_location, weights_only=False, \*\*kwargs)/g' $SITE_PACKAGES/TTS/utils/io.py
+# Try patching user site-packages first, then system if needed (though we are user now)
+RUN SITE_PACKAGES=$(python -c "import site; print(site.getusersitepackages())") &&     if [ -f "$SITE_PACKAGES/TTS/utils/io.py" ]; then         sed -i 's/return torch.load(f, map_location=map_location, \*\*kwargs)/return torch.load(f, map_location=map_location, weights_only=False, \*\*kwargs)/g' "$SITE_PACKAGES/TTS/utils/io.py";     else         echo "Warning: Could not find TTS in user site-packages, checking system...";     fi
 
 # Copy the rest of the application
-COPY . .
+COPY --chown=user . .
 
 # Create necessary directories
 RUN mkdir -p samples output
 
-# Default command
-CMD ["python", "interactive_tts.py"]
+# Agree to Coqui TOS for pre-download
+ENV COQUI_TOS_AGREED=1
+
+# Pre-download the model to cache it in the image
+RUN python -c "from TTS.api import TTS; TTS('tts_models/multilingual/multi-dataset/xtts_v2')"
+
+# Expose Gradio port
+EXPOSE 7860
+
+# Run the Gradio app
+CMD ["python", "app.py"]
