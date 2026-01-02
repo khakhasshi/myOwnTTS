@@ -4,6 +4,7 @@
 ![License](https://img.shields.io/badge/license-AGPL--3.0-red.svg)
 ![Docker](https://img.shields.io/badge/docker-supported-2496ED.svg?logo=docker&logoColor=white)
 ![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey)
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/JIANGJINGZHE/Mac_Lightweight_Voice_Clone)
 
 **Author / 作者:** 江景哲 JIANG JINGZHE  
 **Contact / 联系方式:** contact@jiangjingzhe.com
