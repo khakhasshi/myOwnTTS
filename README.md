@@ -74,6 +74,28 @@ python interactive_tts.py
 
 ---
 
+## ⚠️ Security & Ethical Use Disclaimer / 安全与道德使用声明
+
+**English:**
+This project is intended for **educational and research purposes only**. 
+- Do not use this software to clone voices without the explicit consent of the speaker.
+- Do not use this software to generate content that is illegal, harmful, defamatory, or intended to deceive (e.g., deepfakes for fraud).
+- The authors assume no responsibility for any misuse of this software. By using this software, you agree to take full responsibility for your actions.
+
+**中文:**
+本项目仅供**教育和研究目的**使用。
+- 请勿在未获得说话者明确同意的情况下克隆其声音。
+- 请勿使用本软件生成非法、有害、诽谤或旨在欺骗的内容（例如用于诈骗的深度伪造）。
+- 作者不对本软件的任何滥用行为承担责任。使用本软件即表示您同意为您的一切行为承担全部责任。
+
+## 📄 License / 许可证
+
+This project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**.
+本项目采用 **GNU Affero General Public License v3.0 (AGPL-3.0)** 许可证。
+
+See the [LICENSE](LICENSE) file for details.
+
+
 ## 🇨🇳 中文版本
 
 ### 简介

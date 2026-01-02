@@ -16,4 +16,4 @@ keywords:
   - python
   - docker
 abstract: "A lightweight, high-performance voice cloning TTS system based on Coqui TTS (XTTS v2), optimized for macOS (Apple Silicon) and Docker environments."
-license: MIT
+license: AGPL-3.0

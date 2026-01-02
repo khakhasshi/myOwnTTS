@@ -4,7 +4,7 @@ version = "1.0.0"
 description = "A lightweight, high-performance voice cloning TTS system based on Coqui TTS (XTTS v2), optimized for macOS (Apple Silicon) and Docker."
 readme = "README.md"
 requires-python = ">=3.9"
-license = {text = "MIT"}
+license = {text = "AGPL-3.0"}
 authors = [
     {name = "Jiang Jingzhe", email = "contact@jiangjingzhe.com"}
 ]
@@ -24,7 +24,7 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Topic :: Multimedia :: Sound/Audio :: Speech",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: GNU Affero General Public License v3 (AGPLv3)",
     "Programming Language :: Python :: 3.11",
     "Operating System :: MacOS",
     "Operating System :: POSIX :: Linux"
