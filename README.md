@@ -12,8 +12,7 @@
 
 ## 🔊 Audio Demo / 效果试听
 
-> **[Click here to listen to a sample (点击此处试听样本)](https://github.com/khakhasshi/myOwnTTS/releases)**  
-> *(Upload a generated `speech_*.wav` to your GitHub Releases or link to a file here / 请上传生成的音频文件到 GitHub Releases 或在此处添加链接)*
+> **[▶️ Click here to listen to the demo / 点击此处播放试听样本](assets/audio/demo_voice.wav)**
 
 ---
 
