@@ -55,6 +55,23 @@ python interactive_tts.py
 2. Type a sentence and press Enter; it will generate and play automatically.
 3. Type `q` to exit.
 
+### 🐳 Docker Usage
+
+1. **Build the Image**:
+   ```bash
+   docker build -t my-tts .
+   ```
+
+2. **Run the Container**:
+   You need to mount the `samples` (input) and `output` (results) directories.
+   ```bash
+   docker run -it --rm \
+     -v "$(pwd)/samples:/app/samples" \
+     -v "$(pwd)/output:/app/output" \
+     my-tts
+   ```
+   *Note: Audio playback will not work inside the container. Please check the `output` folder for generated files.*
+
 ---
 
 ## 🇨🇳 中文版本
@@ -106,3 +123,21 @@ python interactive_tts.py
 1. 程序启动后会加载一次模型。
 2. 然后你可以像聊天一样，输入一句话，回车，它就会立刻生成并自动播放。
 3. 输入 `q` 退出。
+
+### 🐳 Docker 使用方法
+
+1. **构建镜像**:
+   ```bash
+   docker build -t my-tts .
+   ```
+
+2. **运行容器**:
+   你需要挂载 `samples` (输入) 和 `output` (输出) 目录。
+   ```bash
+   docker run -it --rm \
+     -v "$(pwd)/samples:/app/samples" \
+     -v "$(pwd)/output:/app/output" \
+     my-tts
+   ```
+   *注意: 容器内无法直接播放音频。请在 `output` 文件夹中查看生成的文件。*
+
