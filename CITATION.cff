@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Jiang"
+  given-names: "Jingzhe"
+  email: "contact@jiangjingzhe.com"
+title: "MyOwnTTS: A Lightweight Voice Cloning TTS System"
+version: 1.0.0
+date-released: 2024-01-02
+url: "https://github.com/khakhasshi/myOwnTTS"
+keywords:
+  - tts
+  - voice-cloning
+  - xtts
+  - coqui-tts
+  - python
+  - docker
+abstract: "A lightweight, high-performance voice cloning TTS system based on Coqui TTS (XTTS v2), optimized for macOS (Apple Silicon) and Docker environments."
+license: MIT
