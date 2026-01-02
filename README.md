@@ -1,7 +1,19 @@
 # Voice Cloning TTS Project / 声音克隆 TTS 项目
 
+![Python](https://img.shields.io/badge/python-3.11-blue.svg)
+![License](https://img.shields.io/badge/license-AGPL--3.0-red.svg)
+![Docker](https://img.shields.io/badge/docker-supported-2496ED.svg?logo=docker&logoColor=white)
+![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey)
+
 **Author / 作者:** 江景哲 JIANG JINGZHE  
 **Contact / 联系方式:** contact@jiangjingzhe.com
+
+---
+
+## 🔊 Audio Demo / 效果试听
+
+> **[Click here to listen to a sample (点击此处试听样本)](https://github.com/khakhasshi/myOwnTTS/releases)**  
+> *(Upload a generated `speech_*.wav` to your GitHub Releases or link to a file here / 请上传生成的音频文件到 GitHub Releases 或在此处添加链接)*
 
 ---
 
