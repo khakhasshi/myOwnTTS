@@ -26,11 +26,8 @@ COPY --chown=user . .
 # Create necessary directories
 RUN mkdir -p samples output
 
-# Agree to Coqui TOS for pre-download
+# Agree to Coqui TOS
 ENV COQUI_TOS_AGREED=1
-
-# Pre-download the model to cache it in the image
-RUN python -c "from TTS.api import TTS; TTS('tts_models/multilingual/multi-dataset/xtts_v2')"
 
 # Expose Gradio port
 EXPOSE 7860
